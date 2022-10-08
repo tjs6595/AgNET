@@ -19,8 +19,8 @@ app.get('/', (req, res) => {
 
 
 // CONTROLLERS 
-// const bandsController = require('./controllers/bands_controller')
-// app.use('/bands', bandsController)
+const cattleController = require('./controllers/cattle_controller')
+app.use('/cattle', cattleController)
 
 // const eventsController = require('./controllers/events_controller')
 // app.use('/events', eventsController)
