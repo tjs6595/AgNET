@@ -1,13 +1,13 @@
 // DEPENDENCIES
 const { Op } = require('sequelize')
-const cattleHerds = require('express').Router()
+const cattle = require('express').Router()
 // const db = require('../models')
 // const meetgreet = require('../models/meetgreet')
 // const { Band, MeetGreet, Event, SetTime } = db 
 
 // FIND ALL CATTLE HERDS (INDEX ROUTE)
-cattleHerds.get('/', async (req, res) => {
-    console.log("This is the Cattle Herd Index Page")
+cattle.get('/', async (req, res) => {
+    res.send(`This is the Single Cattle Index Page`)
     // try {
     //     const foundCattleHerds = await cattleHerd.findAll({
             // order: [['available_start_time', 'ASC']],
@@ -102,4 +102,4 @@ cattleHerds.get('/', async (req, res) => {
 // })
 
 // EXPORT
-module.exports = cattleHerds;
+module.exports = cattle;

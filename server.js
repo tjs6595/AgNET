@@ -19,11 +19,14 @@ app.get('/', (req, res) => {
 
 
 // CONTROLLERS 
-const cattleController = require('./controllers/cattle_controller')
-app.use('/cattle', cattleController)
+const livestockController = require('./controllers/livestock_controller')
+app.use('/livestock', livestockController)
 
-// const eventsController = require('./controllers/events_controller')
-// app.use('/events', eventsController)
+const cattleHerdController = require('./controllers/cattle_herd_controller')
+app.use('/livestock/cattleHerds', cattleHerdController)
+
+const cattleController = require('./controllers/cattle_controller')
+app.use('/livestock/cattleHerds/cattle', cattleController)
 
 // const stagesController = require('./controllers/stages_controller')
 // app.use('/stages', stagesController)
