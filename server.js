@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: false }))
 
 
 // MIDDLEWARE
-app.set('views', __dirname + '/views')
+// app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
 app.use(express.static('public'))
@@ -28,19 +28,47 @@ app.get('/', (req, res) => {
     res.render('home')
 })
 
+// LIVESTOCK HOME PAGE
+app.get('/livestock', (req, res) => {
+    res.render('livestock')
+})
+
+// CATTLE HERD PAGE
+app.get('/cattleHerds/herdList', (req, res) => {
+    res.render('cattleHerds/herdList')
+})
+
+// CATTLE INFO PAGE
+app.get('/cattle/cattleList', (req, res) => {
+    res.render('cattle/cattleList')
+})
+
+// SWINE HERD PAGE
+app.get('/swineHerds/herdList', (req, res) => {
+    res.render('swineHerds/herdList')
+})
+
+// SWINE INFO PAGE
+app.get('/swine/swineList', (req, res) => {
+    res.render('swine/swineList')
+})
+
 
 // CONTROLLERS 
-const livestockController = require('./controllers/livestock_controller')
+const livestockController = require('./controllers/livestockController')
 app.use('/livestock', livestockController)
 
-const cattleHerdController = require('./controllers/cattle_herd_controller')
-app.use('/livestock/cattleHerds', cattleHerdController)
+const cattleHerdController = require('./controllers/cattleHerdController')
+app.use('/cattleHerds/herdList', cattleHerdController)
 
 const cattleController = require('./controllers/cattle_controller')
-app.use('/livestock/cattleHerds/cattle', cattleController)
+app.use('/cattle/cattleList', cattleController)
 
-// const stagesController = require('./controllers/stages_controller')
-// app.use('/stages', stagesController)
+const swineHerdController = require('./controllers/cattleHerdController')
+app.use('/swineHerds/herdList', swineHerdController)
+
+const swineController = require('./controllers/cattle_controller')
+app.use('/swine/swineList', swineController)
 
 
 // LISTEN

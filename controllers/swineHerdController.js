@@ -1,9 +1,15 @@
 // DEPENDENCIES
-const { Op } = require('sequelize')
-const cattleHerds = require('express').Router()
+// const { Op } = require('sequelize')
+// const cattleHerds = require('express').Router()
 // const db = require('../models')
 // const meetgreet = require('../models/meetgreet')
 // const { Band, MeetGreet, Event, SetTime } = db 
+const express = require('express')
+const methodOverride = require('method-override')
+const cattleHerds = express.Router()
+
+// MIDDLEWARE
+cattleHerds.use(methodOverride('_method'))
 
 // FIND ALL CATTLE HERDS (INDEX ROUTE)
 cattleHerds.get('/', async (req, res) => {
