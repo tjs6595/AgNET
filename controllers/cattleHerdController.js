@@ -13,19 +13,19 @@ cattleHerds.use(methodOverride('_method'))
 
 // FIND ALL CATTLE HERDS (INDEX ROUTE)
 cattleHerds.get('/', async (req, res) => {
-    res.send(`This is the Cattle Herd Index Page`)
-    // try {
-    //     const foundCattleHerds = await cattleHerd.findAll({
-            // order: [['available_start_time', 'ASC']],
-            // where: {
-            //     name: {[Op.like]: `%${req.query.name ? req.query.name : ''}%`}
-            // }
-//         })
-//         res.status(200).json(foundCattleHerds)
-//     }
-//     catch (error) {
-//         res.status(500).json(error)
-//     }
+    // res.send(`This is the Cattle Herd Index Page`)
+    try {
+        const foundCattleHerds = await cattleHerd.findAll({
+            order: [['available_start_time', 'ASC']],
+            where: {
+                name: {[Op.like]: `%${req.query.name ? req.query.name : ''}%`}
+            }
+        })
+        res.status(200).json(foundCattleHerds)
+    }
+    catch (error) {
+        res.status(500).json(error)
+    }
 })
 
 // FIND ONE HERD (SHOW ROUTE)
