@@ -14,6 +14,15 @@ livestock.use(methodOverride('_method'))
 // FIND ALL CATTLE HERDS (INDEX ROUTE)
 livestock.get('/', async (req, res) => {
     res.send(`This is the livestock page.`)
+})
+
+
+// EXPORT
+module.exports = livestock;
+
+
+
+
     // try {
     //     const foundCattleHerds = await cattleHerd.findAll({
             // order: [['available_start_time', 'ASC']],
@@ -26,7 +35,16 @@ livestock.get('/', async (req, res) => {
 //     catch (error) {
 //         res.status(500).json(error)
 //     }
-})
+
+
+
+
+
+
+
+
+
+
 
 // FIND ONE HERD (SHOW ROUTE)
 // herds.get('/:name', async (req, res) => {
@@ -106,6 +124,3 @@ livestock.get('/', async (req, res) => {
 //         res.status(500).json(err)
 //     }
 // })
-
-// EXPORT
-module.exports = livestock;
