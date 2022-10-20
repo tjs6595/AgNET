@@ -12,12 +12,29 @@ app.use(express.urlencoded({ extended: false }))
 
 
 // MIDDLEWARE
-// app.set('views', __dirname + '/views')
+app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
 app.use(express.static('public'))
 app.use(express.urlencoded({extended: true}))
 app.use(methodOverride('_method'))
+
+
+// CONTROLLERS 
+const livestockController = require('./controllers/livestockController')
+app.use('/livestock', livestockController)
+
+const cattleHerdController = require('./controllers/cattleHerdController')
+app.use('/cattleHerds/herdList', cattleHerdController)
+
+const cattleController = require('./controllers/cattle_controller')
+app.use('/cattle/cattleList', cattleController)
+
+const swineHerdController = require('./controllers/cattleHerdController')
+app.use('/swineHerds/herdList', swineHerdController)
+
+const swineController = require('./controllers/cattle_controller')
+app.use('/swine/swineList', swineController)
 
 
 // ROOT
@@ -53,23 +70,10 @@ app.get('/swine/swineList', (req, res) => {
     res.render('swine/swineList')
 })
 
-
-// CONTROLLERS 
-const livestockController = require('./controllers/livestockController')
-app.use('/livestock', livestockController)
-
-const cattleHerdController = require('./controllers/cattleHerdController')
-app.use('/cattleHerds/herdList', cattleHerdController)
-
-const cattleController = require('./controllers/cattle_controller')
-app.use('/cattle/cattleList', cattleController)
-
-const swineHerdController = require('./controllers/cattleHerdController')
-app.use('/swineHerds/herdList', swineHerdController)
-
-const swineController = require('./controllers/cattle_controller')
-app.use('/swine/swineList', swineController)
-
+// ERROR 404 ROUTE
+app.get('*', (req, res) => {
+    res.render('error404')
+})
 
 // LISTEN
 app.listen(process.env.PORT, () => {

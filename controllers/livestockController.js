@@ -13,7 +13,7 @@ livestock.use(methodOverride('_method'))
 
 // FIND ALL CATTLE HERDS (INDEX ROUTE)
 livestock.get('/', async (req, res) => {
-    res.send(`This is the livestock page.`)
+    res.render(`livestock`)
 })
 
 

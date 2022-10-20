@@ -4,15 +4,10 @@ const Def = require('../default');
 
 function cattleHerds(data){
     //formats data into HTML so page can display it
-
-    let cattleHerdsFormatted = data.cattle.map((cattle) => {
+    let cattleHerdsFormatted = data.cattleHerdArray.map((cattleHerdArray) => {
         return (
             <div className='col-sm-4' style={{margin: '15px 0px 15px 0px '}}>
-                <h3><a href={`/cattleHerds/${cattleherds.id}`}>
-                    {cattleherds.name}
-                </a></h3>
-                <img className='mockImg' src={pokemon.image} alt={pokemon.name}></img>
-                <img src={pokemon.sprite} alt={pokemon.sprite}></img>
+                <h2>{cattleHerdArray.name}</h2>
             </div>
         )
     })
@@ -31,3 +26,17 @@ function cattleHerds(data){
 
 // EXPORTS
 module.exports = cattleHerds
+
+
+
+
+
+
+
+
+
+                {/* <h3><a href={`/cattleHerds/${cattleHerds.cattle_herd_id}`}>
+                    {cattleHerds.name}
+                </a></h3> */}
+                {/* <img className='mockImg' src={pokemon.image} alt={pokemon.name}></img>
+                <img src={pokemon.sprite} alt={pokemon.sprite}></img> */}

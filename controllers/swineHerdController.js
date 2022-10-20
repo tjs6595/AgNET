@@ -1,32 +1,49 @@
 // DEPENDENCIES
-// const { Op } = require('sequelize')
-// const cattleHerds = require('express').Router()
-// const db = require('../models')
-// const meetgreet = require('../models/meetgreet')
-// const { Band, MeetGreet, Event, SetTime } = db 
-const express = require('express')
+const { Op } = require('sequelize')
+const swineHerds = require('express').Router()
+const db = require('../models')
+const { SwineHerds } = db 
 const methodOverride = require('method-override')
-const cattleHerds = express.Router()
+
 
 // MIDDLEWARE
-cattleHerds.use(methodOverride('_method'))
+swineHerds.use(methodOverride('_method'))
 
 // FIND ALL CATTLE HERDS (INDEX ROUTE)
-cattleHerds.get('/', async (req, res) => {
-    res.send(`This is the Cattle Herd Index Page`)
-    // try {
-    //     const foundCattleHerds = await cattleHerd.findAll({
-            // order: [['available_start_time', 'ASC']],
-            // where: {
-            //     name: {[Op.like]: `%${req.query.name ? req.query.name : ''}%`}
-            // }
-//         })
+swineHerds.get('/', async (req, res) => {
+    let swineHerdArray = [{
+        swine_herd_id:'1',
+        name: 'Swine Herd 1',
+      }, {
+        swine_herd_id:'2',
+        name: 'Swine Herd 2',
+      }]
+      res.render('swineHerds/herdList', { swineHerdArray })
+})
+
+// EXPORT
+module.exports = swineHerds;
+
+
+
+
+
+
+
+
+
+
+
+
+    // res.send(`This is the Cattle Herd Index Page`)
+//     try {
+//         const foundCattleHerds = await CattleHerds.findAll()
 //         res.status(200).json(foundCattleHerds)
 //     }
 //     catch (error) {
 //         res.status(500).json(error)
 //     }
-})
+// })
 
 // FIND ONE HERD (SHOW ROUTE)
 // herds.get('/:name', async (req, res) => {
@@ -106,6 +123,3 @@ cattleHerds.get('/', async (req, res) => {
 //         res.status(500).json(err)
 //     }
 // })
-
-// EXPORT
-module.exports = cattleHerds;

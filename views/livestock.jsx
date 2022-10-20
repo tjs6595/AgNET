@@ -7,8 +7,8 @@ function livestock(){
         <Def>
             <main>
                 <h1>LIVESTOCK</h1>
-                <div>
-                    <a href='/cattleHerds/herdList'><i className="fa-solid fa-dragon" aria-hidden="true"></i> CATTLE from livestock</a>
+                <div style={{display: "block"}}>
+                    <a href='/cattleHerds/herdList'><i className="fa-solid fa-dragon" aria-hidden="true"></i> CATTLE</a>
 
                     <a href='/swineHerds/herdList'><i className="fa-solid fa-dragon" aria-hidden="true"></i> SWINE</a>
 
