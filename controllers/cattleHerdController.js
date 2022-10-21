@@ -2,7 +2,7 @@
 const { Op } = require('sequelize')
 const cattleHerds = require('express').Router()
 const db = require('../models')
-const { CattleHerds } = db 
+const { CattleHerd } = db 
 const methodOverride = require('method-override')
 
 
@@ -11,15 +11,29 @@ cattleHerds.use(methodOverride('_method'))
 
 // FIND ALL CATTLE HERDS (INDEX ROUTE)
 cattleHerds.get('/', async (req, res) => {
-    let cattleHerdArray = [{
-        cattle_herd_id:'1',
-        name: 'Cattle Herd 1',
-      }, {
-        cattle_herd_id:'2',
-        name: 'Cattle Herd 2',
-      }]
-      res.render('cattleHerds/herdList', { cattleHerdArray })
+  try {
+    const foundCattleHerds = await CattleHerd.findAll()
+    res.status(200).json(foundCattleHerds)
+  }
+  catch (error) {
+    res.status(500).json(error)
+  }
 })
+
+// CREATE A HERD
+cattleHerds.get('/new', async (req, res) => {
+    res.render('./cattleHerds/new')
+    // try {
+    //     const newHerd = await Herd.create(req.body)
+    //     res.status(200).json({
+    //         message: 'Successfully created a new herd.',
+    //         data: newHerd
+    //     })
+    // } catch(err) {
+    //     res.status(500).json(err)
+    // }
+})
+
 
 // EXPORT
 module.exports = cattleHerds;
@@ -35,15 +49,7 @@ module.exports = cattleHerds;
 
 
 
-    // res.send(`This is the Cattle Herd Index Page`)
-//     try {
-//         const foundCattleHerds = await CattleHerds.findAll()
-//         res.status(200).json(foundCattleHerds)
-//     }
-//     catch (error) {
-//         res.status(500).json(error)
-//     }
-// })
+
 
 // FIND ONE HERD (SHOW ROUTE)
 // herds.get('/:name', async (req, res) => {
@@ -78,18 +84,7 @@ module.exports = cattleHerds;
 //     }
 // })
 
-// CREATE A HERD
-// herds.post('/', async (req, res) => {
-//     try {
-//         const newHerd = await Herd.create(req.body)
-//         res.status(200).json({
-//             message: 'Successfully created a new herd.',
-//             data: newHerd
-//         })
-//     } catch(err) {
-//         res.status(500).json(err)
-//     }
-// })
+
 
 // UPDATE A HERD
 // herds.put('/:id', async (req, res) => {

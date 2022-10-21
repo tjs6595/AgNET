@@ -22,37 +22,29 @@ app.use(methodOverride('_method'))
 
 // CONTROLLERS 
 const livestockController = require('./controllers/livestockController')
-app.use('/livestock', livestockController)
+app.use('/Livestock', livestockController)
 
 const cattleHerdController = require('./controllers/cattleHerdController')
-app.use('/cattleHerds/herdList', cattleHerdController)
+app.use('/Livestock/Cattle/HerdList', cattleHerdController)
 
 const cattleController = require('./controllers/cattle_controller')
 app.use('/cattle/cattleList', cattleController)
 
-const swineHerdController = require('./controllers/cattleHerdController')
-app.use('/swineHerds/herdList', swineHerdController)
-
-const swineController = require('./controllers/cattle_controller')
-app.use('/swine/swineList', swineController)
 
 
 // ROOT
 app.get('/', (req, res) => {
-    // res.status(200).json({
-    //     message: 'Welcome to the AgNET Home Page about Breads'
-    // })
     res.render('home')
 })
 
 // LIVESTOCK HOME PAGE
-app.get('/livestock', (req, res) => {
-    res.render('livestock')
+app.get('/Livestock', (req, res) => {
+    res.render('./livestock')
 })
 
 // CATTLE HERD PAGE
-app.get('/cattleHerds/herdList', (req, res) => {
-    res.render('cattleHerds/herdList')
+app.get('/Livestock/Cattle/HerdList', (req, res) => {
+    res.render('../cattleHerds/herdList')
 })
 
 // CATTLE INFO PAGE
@@ -60,15 +52,6 @@ app.get('/cattle/cattleList', (req, res) => {
     res.render('cattle/cattleList')
 })
 
-// SWINE HERD PAGE
-app.get('/swineHerds/herdList', (req, res) => {
-    res.render('swineHerds/herdList')
-})
-
-// SWINE INFO PAGE
-app.get('/swine/swineList', (req, res) => {
-    res.render('swine/swineList')
-})
 
 // ERROR 404 ROUTE
 app.get('*', (req, res) => {
@@ -79,3 +62,26 @@ app.get('*', (req, res) => {
 app.listen(process.env.PORT, () => {
     console.log(`🚜 Workin' on port: ${process.env.PORT}`)
 })
+
+
+
+
+
+
+
+// const swineHerdController = require('./controllers/cattleHerdController')
+// app.use('/swineHerds/herdList', swineHerdController)
+
+// const swineController = require('./controllers/cattle_controller')
+// app.use('/swine/swineList', swineController)
+
+
+// SWINE HERD PAGE
+// app.get('/swineHerds/herdList', (req, res) => {
+//     res.render('swineHerds/herdList')
+// })
+
+// // SWINE INFO PAGE
+// app.get('/swine/swineList', (req, res) => {
+//     res.render('swine/swineList')
+// })

@@ -12,8 +12,8 @@ const livestock = express.Router()
 livestock.use(methodOverride('_method'))
 
 // FIND ALL CATTLE HERDS (INDEX ROUTE)
-livestock.get('/', async (req, res) => {
-    res.render(`livestock`)
+livestock.get('/Livestock', async (req, res) => {
+    res.render(`/Livestock`)
 })
 
 
