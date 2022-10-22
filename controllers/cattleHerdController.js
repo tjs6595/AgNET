@@ -29,7 +29,17 @@ cattleHerds.get('/new', (req, res) => {
 
 // CATTLE HERD SHOW PAGE
 cattleHerds.get('/:id', (req, res) => {
-  res.send('GET ./cattleHerds/herdList/:id stub')
+  let id = Number(req.params.id)
+  console.log(id)
+    if (isNaN(id)) {
+      res.render('error404')
+    }
+    else if(!cattleHerdList[id]) {
+      res.render('error404')
+    }
+    else {
+      res.render('./cattleHerds/show', { cattleHerdList: cattleHerdList[id], id})
+    }
 })
 
 // CATTLE HERD UPDATE PAGE
@@ -39,12 +49,32 @@ cattleHerds.put('/:id', (req, res) => {
 
 // CATTLE HERDS DELETE PAGE
 cattleHerds.delete('/:id', (req, res) => {
-  res.send('DELETE ./cattleHerds/herdList/:id stub')
+  let id = Number(req.params.id)
+  if (isNaN(id)) {
+    res.render('error404')
+  }
+  else if(!cattleHerdList[id]) {
+    res.render('error404')
+  }
+  else {
+    cattleHerdList.splice(id, 1)
+    res.redirect('./')
+  }
 })
 
 // CATTLE HERD UPDATE FORM PAGE
 cattleHerds.get('/:id/edit', (req, res) => {
-  res.send('GET ./cattleHerds/herdList/:id/edit stub')
+  let id = Number(req.params.id)
+  if (isNaN(id)) {
+    res.render('error404')
+  }
+  else if(!cattleHerdList[id]) {
+    res.render('error404')
+  }
+  else {
+    res.render('./cattleHerds/herdList/:id/edit', { cattleHerdList: cattleHerdList[id]})
+  }
+
 })
 
 // EXPORT

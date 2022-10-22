@@ -5,10 +5,14 @@ const Def = require('../default');
 // function cattleHerds(data){
 function cattleHerds(data){
     //formats data into HTML so page can display it
-    let cattleHerdsFormatted = data.cattleHerdList.map((cattleHerdList) => {
+    let cattleHerdsFormatted = data.cattleHerdList.map((cattleHerdList, index) => {
         return (
-            <div className='col-sm-4' style={{margin: '15px 0px 15px 0px '}}>
-                <h2>{cattleHerdList.name}</h2>
+            <div className='col-sm-6' style={{margin: '15px 0px 15px 0px '}}>
+                <h2>
+                    <a href={`./cattleHerds/${index}`}>
+                        {cattleHerdList.name}
+                    </a>
+                </h2>
             </div>
         )
     })

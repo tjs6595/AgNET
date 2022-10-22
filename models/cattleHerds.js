@@ -1,5 +1,5 @@
 let cattleHerdList = [{
-    id: '1',
+    id: 1,
     name: 'Array Herd 1',
     head: [
       'Cattle 1',
@@ -7,7 +7,7 @@ let cattleHerdList = [{
       'Cattle 3'
     ]
   }, {
-    id: '2',
+    id: 2,
     name: 'Array Herd 2',
     head: [
       'Cattle 4',
