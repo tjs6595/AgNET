@@ -24,13 +24,29 @@ function cattleHerds(data){
                 <div className='row'>
                     {cattleHerdsFormatted}  
                 </div>
-                {/* <div>
-                    <h1>{ data.cattleHerdList.name }</h1>
-                        <a href={`./HerdList/new`} className="btn btn-warning"> New Herd </a>  
-                    <form method="POST" action={`/cattleHerds/${cattleHerd.id}?_method=DELETE`}> 
-                        <button type="submit" className="btn btn-danger"> Delete </button>
-                    </form>  
-                </div>    */}
+                <div>
+                {/* BUTTONS */}
+                    <div>
+                        <div style={{display: 'inline-flex',}}>
+                        {/* NEW BUTTON */}
+                            <div>
+                                <a href={`./HerdList/new`} className="btn btn-warning"> New Herd </a>  
+                            </div>
+
+                        {/* EDIT BUTTON */}
+                            <a href={`./HerdList/${data.cattleHerd.id}/edit`} className='btn btn-success btn-lg' style={{marginRight: '15px'}}>
+                                Edit
+                            </a>
+
+                        {/* DELETE BUTTON */}
+                            <form method='POST' action={`./HerdList/${data.cattleHerd.id}?_method=DELETE`}>
+                                <button type='submit' className='btn btn-danger btn-lg'>
+                                    Delete
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </main>
         </Def>
     )
@@ -52,3 +68,10 @@ module.exports = cattleHerds
                 </a></h3> */}
                 {/* <img className='mockImg' src={pokemon.image} alt={pokemon.name}></img>
                 <img src={pokemon.sprite} alt={pokemon.sprite}></img> */}
+
+                               {/* <div>
+                    <a href={`./HerdList/new`} className="btn btn-warning"> New Herd </a>  
+                    <form method="POST" action={`/cattleHerds/${data.cattleHerd.id}?_method=DELETE`}> 
+                    <button type="submit" className="btn btn-danger"> Delete </button>
+                    </form>  
+                </div>    */}

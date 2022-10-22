@@ -25,7 +25,15 @@ cattleHerds.get('/', async (req, res) => {
 
 // 2.) CREATE NEW CATTLE HERD (FROM PUSH BUTTON)
 cattleHerds.post('/new', async (req, res) => {
-  res.send('GET cattleHerds/new stub')
+  console.log(req.body)
+  db.CattleHerd.create(req.body)
+  .then(() => {
+    res.redirect('/Livestock/Cattle/HerdList')
+  })
+  .catch(err => {
+    console.log('err', err)
+    res.render('error404')
+  })
 })
 
 // 3.) NEW CATTLE HERD FORM PAGE
@@ -47,17 +55,38 @@ cattleHerds.get('/:id', (req, res) => {
 
 // 5.) CATTLE HERD UPDATE (FROM PUSH BUTTON)
 cattleHerds.put('/:id', (req, res) => {
-  res.send('PUT ./cattleHerds/herdList/:id stub')
+  db.CattleHerd.findByIdAndUpdate(req.params.id, req.body)
+  .then(() => {
+    res.redirect(`/Livestock/Cattle/HerdList/${req.params.id}`)
+  })
+  .catch(err => {
+    console.log('err', err)
+    res.render('error404')
+  })
 })
 
 // 6.) CATTLE HERDS DELETE PAGE
 cattleHerds.delete('/:id', (req, res) => {
-  res.send('DELETE ./cattleHerds/herdList/:id stub')
+  db.CattleHerd.findByIdAndDelete(req.params.id)
+  .then(cattleHerd => {
+      res.redirect('/Livestock/Cattle/HerdList')
+  })
+  .catch(err => {
+      console.log('err', err)
+      res.render('error404')
+  })
 })
 
 // 7.) CATTLE HERD UPDATE FORM PAGE
 cattleHerds.get('/:id/edit', (req, res) => {
-  res.send('GET ./cattleHerds/herdList/:id/edit stub')
+  // res.send('GET ./cattleHerds/herdList/:id/edit stub')
+  db.CattleHerd.findById(req.params.id)
+  .then(cattleHerd => {
+    res.render('./cattleHerds/edit', { cattleHerd })
+  })
+  .catch(err => {
+    res.render('error404', err)
+  })
 })
 
 // EXPORT
