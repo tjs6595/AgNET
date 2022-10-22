@@ -37,13 +37,6 @@ function cattleHerds(data){
                             <a href={`./HerdList/${data.cattleHerd.id}/edit`} className='btn btn-success btn-lg' style={{marginRight: '15px'}}>
                                 Edit
                             </a>
-
-                        {/* DELETE BUTTON */}
-                            <form method='POST' action={`./HerdList/${data.cattleHerd.id}?_method=DELETE`}>
-                                <button type='submit' className='btn btn-danger btn-lg'>
-                                    Delete
-                                </button>
-                            </form>
                         </div>
                     </div>
                 </div>
