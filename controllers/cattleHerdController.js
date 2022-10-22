@@ -2,8 +2,9 @@
 const { Op } = require('sequelize')
 const express = require ('express')
 const cattleHerds = require('express').Router()
-const db = require('../models')
-const CattleHerd = require('../models/cattleHerd.js')
+const cattleHerdList = require('../models/cattleHerds')
+// const db = require('../sql_models/sql_index')
+// const CattleHerd = require('../sql_models/sql_cattleHerd.js')
 const methodOverride = require('method-override')
 
 
@@ -12,31 +13,13 @@ cattleHerds.use(methodOverride('_method'))
 
 // CATTLE HERDS INDEX PAGE
 cattleHerds.get('/', async (req, res) => {
-  let cattleHerdList = [{
-    id: '1',
-    name: 'Array Herd 1',
-    head: [
-      'Cattle 1',
-      'Cattle 2',
-      'Cattle 3'
-    ]
-  }, {
-    id: '2',
-    name: 'Array Herd 2',
-    head: [
-      'Cattle 4',
-      'Cattle 5',
-      'Cattle 6'
-    ]
-  }]
-  
   res.render('./cattleHerds/herdList', { cattleHerdList })
 })
 
 // CREATE NEW CATTLE HERD
 cattleHerds.post('/new', async (req, res) => {
-  console.log(req.body)
-  res.send('POST /Livestock/Cattle/HerdList/New')
+  cattleHerdList.push(req.body)
+  res.redirect('./')
 })
 
 // NEW CATTLE HERD FORM PAGE

@@ -10,7 +10,9 @@ function newForm (data) {
                 <form method="POST" action="/Livestock/Cattle/HerdList/New">
                     <div className='form-group'>
                         <label htmlFor="name">Herd Name</label>
+                        <input className='form-control' id="id" name="id" required />
                         <input className='form-control' id="name" name="name" required />
+                        <input className='form-control' id="head" name="head"/>
                     </div>
                     <input className='btn btn-primary' type="submit" value="Add Herd" />
                 </form>
