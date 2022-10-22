@@ -15,7 +15,7 @@ function Default(html) {
         <header>
           <h1>AgNET</h1>
           <nav>
-            <a href='/'> <i className="fa fa-gamepad" aria-hidden="true"></i> AgNET</a>
+            <a href='/'> <i></i> AgNET</a>
             <a href='/Livestock'> <i className="fa fa-gamepad" aria-hidden="true"></i> Livestock</a>
             {/* <a href='/livestock/cattleList'><i className="fa fa-question-circle" aria-hidden="true"></i> Cattle Herds</a> */}
             {/* <a href='/livestock/cattleHerds/cattle'><i className="fa fa-question-circle" aria-hidden="true"></i> Cattle</a>
@@ -24,7 +24,7 @@ function Default(html) {
           </nav>
         </header>
         <div id="info">
-          <h2>This is just a placeholder.</h2>
+          {/* <h2>This is just a placeholder.</h2> */}
         </div>
         {/* <header>
           <h1><a>AgNet</a></h1>
@@ -34,6 +34,12 @@ function Default(html) {
         </div>
       </div>
     </body>
+    <footer>
+                <p>Milestone Project 3: Final Project</p>
+                <ul><b><u>Project Creator:</u></b>
+                    <li>Tim Schultejans</li>
+                </ul>
+            </footer>
     </html>
   )
 }

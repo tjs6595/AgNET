@@ -2,12 +2,13 @@
 const React = require('react');
 const Def = require('../default');
 
+// function cattleHerds(data){
 function cattleHerds(data){
     //formats data into HTML so page can display it
-    let cattleHerdsFormatted = data.cattleHerdArray.map((cattleHerdArray) => {
+    let cattleHerdsFormatted = data.cattleHerdList.map((cattleHerdList) => {
         return (
             <div className='col-sm-4' style={{margin: '15px 0px 15px 0px '}}>
-                <h2>{cattleHerdArray.name}</h2>
+                <h2>{cattleHerdList.name}</h2>
             </div>
         )
     })

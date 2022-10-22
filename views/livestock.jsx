@@ -6,12 +6,9 @@ function livestock(){
     return (
         <Def>
             <main>
-                <h1>LIVESTOCK</h1>
+                <h2>LIVESTOCK</h2>
                 <div style={{display: "block"}}>
-                    <a href='Livestock/Cattle/HerdList'><i className="fa-solid fa-dragon" aria-hidden="true"></i> CATTLE</a>
-
-                    {/* <a href='/swineHerds/herdList'><i className="fa-solid fa-dragon" aria-hidden="true"></i> SWINE</a> */}
-
+                    <a  className='livestockmenulist' href='Livestock/Cattle/HerdList'><i></i> CATTLE</a>
                 </div>
             </main>
         </Def>

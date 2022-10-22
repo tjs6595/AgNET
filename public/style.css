@@ -11,7 +11,7 @@ body {
 }
 
 div#info {
-  min-height: 50vh;
+  min-height: 25vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,17 +25,32 @@ header {
   transition: .4s;
 }
 
-header:hover {
+/* header:hover {
   background: rgba(255,255,255,0.8);
   color: yellowgreen;
-}
+} */
 
 h1 {
   font-family: Moderne Sans, sans-serif;
+  font-weight: bold;
   text-align: center;
   font-size: 10rem;
   width: 100%;
   letter-spacing: .5rem;
+}
+
+h2 { 
+  font-family: Century Schoolbook, Century Schoolbook L, Georgia, serif;
+  font-size: 7rem;
+  text-align: center;
+  margin: 2rem 3rem 0;
+  mix-blend-mode: overlay;
+  color: #fff;
+  font-weight: 100;
+}
+
+nav {
+  background-color: black;
 }
 
 nav a {
@@ -44,12 +59,33 @@ nav a {
   padding: 1rem;
 }
 
-h2 { 
+.livestockmenulist {
   font-family: Century Schoolbook, Century Schoolbook L, Georgia, serif;
-  font-size: 8vmin;
+  font-size: 3rem;
   text-align: center;
   margin: 2rem 3rem 0;
-  mix-blend-mode: overlay;
-  color: #fff;
+  color: yellow;
   font-weight: 100;
+}
+
+.livestockmenulist:hover {
+  color: black
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 15%;
+  background-color: black;
+  color: yellow;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+footer p {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.25rem;
 }

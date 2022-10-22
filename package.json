@@ -6,6 +6,7 @@
     "method-override": "^3.0.0",
     "pg": "^8.8.0",
     "pg-hstore": "^2.3.4",
+    "pg-promise": "^10.12.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "sequelize": "^6.25.2"
