@@ -34,19 +34,19 @@ cattleHerds.get('/', async (req, res) => {
 })
 
 // CREATE NEW CATTLE HERD
-cattleHerds.post('/', async (req, res) => {
-  res.send('POST ./cattleHerds/herdList stub')
+cattleHerds.post('/new', async (req, res) => {
+  res.render('./cattleHerds/new')
 })
 
 // NEW CATTLE HERD FORM PAGE
 cattleHerds.get('/new', (req, res) => {
-  res.render('./cattleHerds/herdList/new')
+  res.render('./cattleHerds/new')
 })
 
 // CATTLE HERD SHOW PAGE
-cattleHerds.get('/:id', (req, res) => {
-  res.send('GET ./cattleHerds/herdList/:id stub')
-})
+// cattleHerds.get('/:id', (req, res) => {
+//   res.send('GET ./cattleHerds/herdList/:id stub')
+// })
 
 // CATTLE HERD UPDATE PAGE
 cattleHerds.put('/:id', (req, res) => {
