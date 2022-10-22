@@ -1,9 +1,9 @@
 // DEPENDENCIES
-const { Op } = require('sequelize')
+// const { Op } = require('sequelize')
 const express = require ('express')
 const cattleHerds = require('express').Router()
-const cattleHerdList = require('../models/cattleHerds')
-// const db = require('../sql_models/sql_index')
+const cattleHerdList = require('../models/cattleHerd')
+const db = require('../models')
 // const CattleHerd = require('../sql_models/sql_cattleHerd.js')
 const methodOverride = require('method-override')
 
@@ -11,70 +11,53 @@ const methodOverride = require('method-override')
 // MIDDLEWARE
 cattleHerds.use(methodOverride('_method'))
 
-// CATTLE HERDS INDEX PAGE
+// 1.) CATTLE HERDS INDEX PAGE
 cattleHerds.get('/', async (req, res) => {
-  res.render('./cattleHerds/herdList', { cattleHerdList })
+  db.CattleHerd.find()
+  .then((cattleHerd) => {
+      res.render('cattleHerds/herdList', { cattleHerd })
+  })
+  .catch(err => {
+      console.log(err)
+      res.render('error404')
+  })
 })
 
-// CREATE NEW CATTLE HERD
+// 2.) CREATE NEW CATTLE HERD (FROM PUSH BUTTON)
 cattleHerds.post('/new', async (req, res) => {
-  cattleHerdList.push(req.body)
-  res.redirect('./')
+  res.send('GET cattleHerds/new stub')
 })
 
-// NEW CATTLE HERD FORM PAGE
+// 3.) NEW CATTLE HERD FORM PAGE
 cattleHerds.get('/new', (req, res) => {
   res.render('./cattleHerds/new')
 })
 
-// CATTLE HERD SHOW PAGE
+// 4.) CATTLE HERD SHOW PAGE
 cattleHerds.get('/:id', (req, res) => {
-  let id = Number(req.params.id)
-  console.log(id)
-    if (isNaN(id)) {
-      res.render('error404')
-    }
-    else if(!cattleHerdList[id]) {
-      res.render('error404')
-    }
-    else {
-      res.render('./cattleHerds/show', { cattleHerdList: cattleHerdList[id], id})
-    }
+  db.CattleHerd.findById(req.params.id)
+  .then( cattleHerd => {
+      res.render('cattleHerds/show', { cattleHerd })
+  })
+  .catch( err => {
+    console.log('err', err)
+    res.render('error404')
+  })
 })
 
-// CATTLE HERD UPDATE PAGE
+// 5.) CATTLE HERD UPDATE (FROM PUSH BUTTON)
 cattleHerds.put('/:id', (req, res) => {
   res.send('PUT ./cattleHerds/herdList/:id stub')
 })
 
-// CATTLE HERDS DELETE PAGE
+// 6.) CATTLE HERDS DELETE PAGE
 cattleHerds.delete('/:id', (req, res) => {
-  let id = Number(req.params.id)
-  if (isNaN(id)) {
-    res.render('error404')
-  }
-  else if(!cattleHerdList[id]) {
-    res.render('error404')
-  }
-  else {
-    cattleHerdList.splice(id, 1)
-    res.redirect('./')
-  }
+  res.send('DELETE ./cattleHerds/herdList/:id stub')
 })
 
-// CATTLE HERD UPDATE FORM PAGE
+// 7.) CATTLE HERD UPDATE FORM PAGE
 cattleHerds.get('/:id/edit', (req, res) => {
-  let id = Number(req.params.id)
-  if (isNaN(id)) {
-    res.render('error404')
-  }
-  else if(!cattleHerdList[id]) {
-    res.render('error404')
-  }
-  else {
-    res.render('./cattleHerds/herdList/:id/edit', { cattleHerdList: cattleHerdList[id]})
-  }
-
+  res.send('GET ./cattleHerds/herdList/:id/edit stub')
 })
 
 // EXPORT
@@ -196,4 +179,77 @@ module.exports = cattleHerds;
 //     } catch(err) {
 //         res.status(500).json(err)
 //     }
+// })
+
+
+
+
+
+
+
+
+// // CATTLE HERDS INDEX PAGE
+// cattleHerds.get('/', async (req, res) => {
+//   res.render('./cattleHerds/herdList', { cattleHerdList })
+// })
+
+// // CREATE NEW CATTLE HERD (FROM PUSH BUTTON)
+// cattleHerds.post('/new', async (req, res) => {
+//   cattleHerdList.push(req.body)
+//   res.redirect('./')
+// })
+
+// // NEW CATTLE HERD FORM PAGE
+// cattleHerds.get('/new', (req, res) => {
+//   res.render('./cattleHerds/new')
+// })
+
+// // CATTLE HERD SHOW PAGE
+// cattleHerds.get('/:id', (req, res) => {
+//   let id = Number(req.params.id)
+//   console.log(id)
+//     if (isNaN(id)) {
+//       res.render('error404')
+//     }
+//     else if(!cattleHerdList[id]) {
+//       res.render('error404')
+//     }
+//     else {
+//       res.render('./cattleHerds/show', { cattleHerdList: cattleHerdList[id], id})
+//     }
+// })
+
+// // CATTLE HERD UPDATE (FROM PUSH BUTTON)
+// cattleHerds.put('/:id', (req, res) => {
+//   res.send('PUT ./cattleHerds/herdList/:id stub')
+// })
+
+// // CATTLE HERDS DELETE PAGE
+// cattleHerds.delete('/:id', (req, res) => {
+//   let id = Number(req.params.id)
+//   if (isNaN(id)) {
+//     res.render('error404')
+//   }
+//   else if(!cattleHerdList[id]) {
+//     res.render('error404')
+//   }
+//   else {
+//     cattleHerdList.splice(id, 1)
+//     res.redirect('./')
+//   }
+// })
+
+// // CATTLE HERD UPDATE FORM PAGE
+// cattleHerds.get('/:id/edit', (req, res) => {
+//   let id = Number(req.params.id)
+//   if (isNaN(id)) {
+//     res.render('error404')
+//   }
+//   else if(!cattleHerdList[id]) {
+//     res.render('error404')
+//   }
+//   else {
+//     res.render('./cattleHerds/edit', { cattleHerdList: cattleHerdList[id]})
+//   }
+
 // })
