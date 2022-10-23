@@ -14,9 +14,13 @@ function show (data) {
         <div>
           {/* BUTTONS */}
             <div>
+              {/* EDIT BUTTON */}
+                <a href={`./${data.cattleHerd.id}/edit`} className='btn btn-success btn-lg' style={{marginRight: '15px'}}>
+                  Edit
+                </a>
               {/* DELETE BUTTON */}
-                <form method='POST' action={`./HerdList/${data.cattleHerd.id}?_method=DELETE`}>
-                  <button type='submit' className='btn btn-danger btn-lg'>
+                <form method='POST' action={`./${data.cattleHerd.id}?_method=DELETE`}>
+                  <button type='submit' className='btn btn-danger btn-lg' style={{marginRight: '15px'}}>
                     Delete
                   </button>
                 </form>

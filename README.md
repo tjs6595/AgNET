@@ -7,10 +7,10 @@ AgNET is an application that is intended to be used as a bookeeping service for 
 Create a user and log into the app to retrieve your data. Once logged in the user can then choose the livestock herd to be observed or modified. Once selected, the collection of herds will be shown. The user can then select the herd to see a list of the individual members of the herd. Clicking on the specific animal will bring up data about that animal. The user is able to modify the herd, including creating or deleting herds and adding or removing animals from a specific herd. The user is also able to modify the details of the specific members of the herd including ear tag numbers, weights, etc.
 
 ## Technologies Used to Build the Application
-* SQL - used for datbase
+* MONGODB - used for datbase
 * HTML - used for React view pages
-* CSS & SASS - used for styling React view pages
-* JavaScript - used for the game mainly
+* CSS & maybe SASS - used for styling React view pages
+* JavaScript - used sparingly throughout when needed
 * React - used for the website pages
 
 

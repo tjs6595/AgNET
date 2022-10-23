@@ -2,9 +2,9 @@
 // const { Op } = require('sequelize')
 const express = require ('express')
 const cattleHerds = require('express').Router()
-const cattleHerdList = require('../models/cattleHerd')
+// const cattleHerdList = require('../models/cattleHerd')
 const db = require('../models')
-// const CattleHerd = require('../sql_models/sql_cattleHerd.js')
+const CattleHerd = require('../models/cattleHerd.js')
 const methodOverride = require('method-override')
 
 
@@ -45,7 +45,8 @@ cattleHerds.get('/new', (req, res) => {
 cattleHerds.get('/:id', (req, res) => {
   db.CattleHerd.findById(req.params.id)
   .then( cattleHerd => {
-      res.render('cattleHerds/show', { cattleHerd })
+    res.render('cattleHerds/show', { cattleHerd })   
+    // console.log(cattleHerd);
   })
   .catch( err => {
     console.log('err', err)

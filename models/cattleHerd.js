@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const cattleHerdSchema = new mongoose.Schema({
     name: {type: String, required: true},
-    head: {type: Array}
+    head: {type: String}
 })
 
 module.exports = mongoose.model('CattleHerd', cattleHerdSchema)

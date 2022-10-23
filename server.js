@@ -1,24 +1,22 @@
 // DEPENDENCIES
-require('dotenv').config()
 const express = require('express')
 const app = express()
-const { Sequelize } = require('sequelize')
 const methodOverride = require('method-override')
+const mongoose = require('mongoose')
 
 
 // CONFIGURATION / MIDDLEWARE
-
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+require('dotenv').config()
 
 
 // MIDDLEWARE
-app.set('views', __dirname + '/views')
+// app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
 app.use(express.static('public'))
 app.use(express.urlencoded({extended: true}))
 app.use(methodOverride('_method'))
+// app.use(express.json())
 
 
 // CONTROLLERS 
@@ -30,7 +28,6 @@ app.use('/Livestock/Cattle/HerdList', cattleHerdController)
 
 const cattleController = require('./controllers/cattle_controller')
 app.use('/cattle/cattleList', cattleController)
-
 
 
 // ROOT

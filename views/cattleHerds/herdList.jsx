@@ -9,7 +9,7 @@ function cattleHerds(data){
         return (
             <div className='col-sm-6' style={{margin: '15px 0px 15px 0px '}}>
                 <h2>
-                    <a href={`./HerdList/${cattleHerd.id}}`}>
+                    <a href={`./HerdList/${cattleHerd.id}`}>
                         {cattleHerd.name}
                     </a>
                 </h2>
@@ -32,11 +32,6 @@ function cattleHerds(data){
                             <div>
                                 <a href={`./HerdList/new`} className="btn btn-warning"> New Herd </a>  
                             </div>
-
-                        {/* EDIT BUTTON */}
-                            <a href={`./HerdList/${data.cattleHerd.id}/edit`} className='btn btn-success btn-lg' style={{marginRight: '15px'}}>
-                                Edit
-                            </a>
                         </div>
                     </div>
                 </div>

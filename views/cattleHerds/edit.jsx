@@ -7,12 +7,11 @@ function editForm (data) {
         <Def>
             <main>
                 <h1>Edit Cattle Herd</h1>
-                <form method="POST" action={`/${data.cattleHerdList.id}?_method=PUT`}>
+                <form method='POST' action={`./?_method=PUT`}>
                     <div className='form-group'>
                         <label htmlFor="name">Herd Name</label>
-                        <input className='form-control' id="id" name="id" value={data.cattleHerdList.id} required />
-                        <input className='form-control' id="name" name="name" value={data.cattleHerdList.name} required />
-                        <input className='form-control' id="head" name="head" value={data.cattleHerdList.head}/>
+                        <input className='form-control' id="name" name="name" value={data.cattleHerd.name} required />
+                        <input className='form-control' id="head" name="head" value={data.cattleHerd.head}/>
                     </div>
                     <input className='btn btn-primary' type="submit" value="Edit Herd" />
                 </form>
