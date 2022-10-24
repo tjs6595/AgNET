@@ -1,12 +1,13 @@
 // DEPENDENCIES
+// CONFIGURATION / MIDDLEWARE
+require('dotenv').config()
 const express = require('express')
 const app = express()
 const methodOverride = require('method-override')
 const mongoose = require('mongoose')
 
 
-// CONFIGURATION / MIDDLEWARE
-require('dotenv').config()
+
 
 
 // MIDDLEWARE
@@ -26,8 +27,8 @@ app.use('/Livestock', livestockController)
 const cattleHerdController = require('./controllers/cattleHerdController')
 app.use('/Livestock/Cattle/HerdList', cattleHerdController)
 
-const cattleController = require('./controllers/cattle_controller')
-app.use('/cattle/cattleList', cattleController)
+const cattleController = require('./controllers/cattleController')
+app.use('/Livestock/Cattle/HerdList/Cattle', cattleController)
 
 
 // ROOT

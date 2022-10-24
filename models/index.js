@@ -6,3 +6,4 @@ mongoose.connect(process.env.MONGO_URI, {
 })
 
 module.exports.CattleHerd = require('./cattleHerd')
+module.exports.Cattle = require('./cattle')

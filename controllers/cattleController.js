@@ -1,6 +1,26 @@
 // DEPENDENCIES
-const { Op } = require('sequelize')
 const cattle = require('express').Router()
+const Cattle = require('../models/cattle.js')
+const cattleSeedData = require('../seeders/cattle_seed.js')
+
+cattle.get('/data/seed', (req, res) => {
+    Cattle.insertMany(cattleSeedData)
+        .then(res.redirect('/Livestock/Cattle/HerdList'))
+})
+
+
+
+
+// export
+module.exports = cattle                   
+
+
+
+
+
+// DEPENDENCIES
+// const { Op } = require('sequelize')
+// const cattle = require('express').Router()
 // const db = require('../models')
 // const meetgreet = require('../models/meetgreet')
 // const { Band, MeetGreet, Event, SetTime } = db 
