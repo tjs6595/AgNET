@@ -15,9 +15,9 @@ function show (data) {
     cattle = data.cattleHerd.cattle.map(c => {
       return (
         <div className="border">
-          <h4> {c.tag_id } </h4>
-          <h4> {c.name } </h4>
-          <h4> {c.species } </h4>
+          <h4>Tag #: {c.tag_id } </h4>
+          <h4>Name: {c.name } </h4>
+          <h4>Breed: {c.species } </h4>
         </div>
       )
     })
