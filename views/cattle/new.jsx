@@ -3,11 +3,16 @@ const Def = require('../default')
 
 // pass in new data
 function newForm (data) {
+
+
+
     return (
         <Def>
             <main>
                 <h1>Add New Cattle </h1>
-                <form method="POST" action={`/New`}>
+                {/* <form method="POST" action={`/Livestock/Cattle/HerdList/${data.cattleHerd.id}/Cattle/New`}> */}
+                {console.log(data)}
+                <form method="POST" action={`/Livestock/Cattle/HerdList/Cattle/New`}>
                     <div className='form-group'>
                         <label htmlFor="name"> Cattle </label>
                         <input className='form-control' id="id" name="tag_id" required />

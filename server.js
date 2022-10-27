@@ -7,9 +7,6 @@ const methodOverride = require('method-override')
 const mongoose = require('mongoose')
 
 
-
-
-
 // MIDDLEWARE
 // app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
@@ -21,14 +18,17 @@ app.use(methodOverride('_method'))
 
 
 // CONTROLLERS 
+const userController = require('./controllers/userController')
+app.use('/', userController)
+
 const livestockController = require('./controllers/livestockController')
 app.use('/Livestock', livestockController)
 
 const cattleHerdController = require('./controllers/cattleHerdController')
 app.use('/Livestock/Cattle/HerdList', cattleHerdController)
 
-const cattleController = require('./controllers/cattleController')
-app.use('/Livestock/Cattle/HerdList/Cattle', cattleController)
+// const cattleController = require('./controllers/cattleController')
+// app.use('/Livestock/Cattle/HerdList/Cattle', cattleController)
 
 
 // ROOT

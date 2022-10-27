@@ -5,5 +5,7 @@ mongoose.connect(process.env.MONGO_URI, {
   useUnifiedTopology: true
 })
 
-module.exports.CattleHerd = require('./cattleHerd')
-module.exports.Cattle = require('./cattle')
+module.exports ={ 
+  'CattleHerd': require('./cattleHerd'),
+'Cattle': require('./cattle'),
+};

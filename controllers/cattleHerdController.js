@@ -46,7 +46,7 @@ cattleHerds.get('/:id', (req, res) => {
   db.CattleHerd.findById(req.params.id)
   .populate('cattle')
   .then( cattleHerd => {
-    console.log(cattleHerd.cattle)
+    // console.log(cattleHerd.cattle)
     res.render('cattleHerds/show', { cattleHerd })   
     // console.log(cattleHerd);
   })
@@ -84,6 +84,7 @@ cattleHerds.delete('/:id', (req, res) => {
 cattleHerds.get('/:id/edit', (req, res) => {
   // res.send('GET ./cattleHerds/herdList/:id/edit stub')
   db.CattleHerd.findById(req.params.id)
+  .populate('cattle')
   .then(cattleHerd => {
     res.render('./cattleHerds/edit', { cattleHerd })
   })
@@ -92,33 +93,36 @@ cattleHerds.get('/:id/edit', (req, res) => {
   })
 })
 
-// 8.) CREATE NEW CATTLE (FROM PUSH BUTTON)
-cattleHerds.post('/New', async (req, res) => {
+// 8.) ADD NEW CATTLE TO HERD (FROM PUSH BUTTON)
+cattleHerds.post('/:id/Cattle/New', async (req, res) => {
   // res.send('POST /:id/Cattle New')
-  console.log(req.body)
+  console.log(req.params.id)
   db.CattleHerd.findById(req.params.id)
-  .then((cattleHerd) => {
-    db.Cattle.create(req.body)
-      .then(cattle => {
-        cattleHerd.cattle.push(cattle.id)
-        cattleHerd.save()
-        .then(() => {
-          res.redirect(`/Livestock/Cattle/HerdList/${req.params.id}`)
+    .then(cattleHerd => {
+      // console.log(req.body)
+      // console.log(cattleHerd.id)
+      // console.log(req.params.id)
+      db.Cattle.create(req.body)
+        .then(cattle => {
+          cattleHerd.cattle.push(cattle.id)
+          cattleHerd.save()
+          .then(() => {
+            res.redirect(`/Livestock/Cattle/HerdList/${req.params.id}`)
+          })
         })
-      })
-      .catch(err => {
-        console.log('err', err)
-        res.render('error404')
-      })
-  })
-  .catch(err => {
-    console.log('err', err)
-    res.render('error404')
-  })
+        .catch(err => {
+          console.log('err', err)
+          res.render('error404')
+        })
+    })
+    .catch(err => {
+      console.log('err', err)
+      res.render('error404')
+    })
 })
 
-// 9.) NEW CATTLE FORM PAGE
-cattleHerds.get('/:id/Cattle/new', (req, res) => {
+// 9.) ADD NEW CATTLE TO HERD FORM PAGE
+cattleHerds.get('/:id/Cattle/New', (req, res) => {
   res.render('./cattle/new')
 })
 

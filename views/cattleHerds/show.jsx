@@ -3,7 +3,7 @@ const React = require('react')
 const Def = require('../default')
 
 function show (data) {
-  console.log(data.cattleHerd.cattle.length)
+  // console.log(data.cattleHerd.cattle.length)
   let cattle = (
     <h3 className="inactive">
       No Cattle Yet!
@@ -14,11 +14,18 @@ function show (data) {
     // console.log(data.cattleHerd.name)
     cattle = data.cattleHerd.cattle.map(c => {
       return (
+        <div>
+          {/* <a href={`./Cattle`}>
+          {c.tag_id}
+        </a> */}
         <div className="border">
           <h4>Tag #: {c.tag_id } </h4>
           <h4>Name: {c.name } </h4>
           <h4>Breed: {c.species } </h4>
         </div>
+
+        </div>
+
       )
     })
   }
