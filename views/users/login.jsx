@@ -8,6 +8,17 @@ function login(){
         <Def>
         <main>
           <h2> LOGIN </h2>
+          <form action="/login" method="POST">
+            <div>
+                <label htmlFor="email">E-mail</label>
+                <input type="email" id="email" name="email" required></input>
+            </div>
+            <div>
+                <label htmlFor="password">Password</label>
+                <input type="password" id="password" name="password" required></input>
+            </div>
+            <button type="submit">LOGIN</button>
+          </form>
           <div>
             {/* BUTTONS */}
               <div >
@@ -25,7 +36,7 @@ function login(){
                   </form> */}
                 {/* BACK TO HOME BUTTON */}
                   <div>
-                    <a href={`/`} className='btn btn-success btn-lg' style={{marginRight: '15px'}}>
+                    <a href={`/`} className='btn btn-success btn-lg' >
                       BACK TO THE HOME SCREEN
                     </a>
                   </div>

@@ -21,6 +21,9 @@ app.use(methodOverride('_method'))
 const userController = require('./controllers/userController')
 app.use('/', userController)
 
+const authenticationController = require('./controllers/authenticationController')
+app.use('/', authenticationController)
+
 const livestockController = require('./controllers/livestockController')
 app.use('/Livestock', livestockController)
 

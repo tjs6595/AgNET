@@ -8,6 +8,21 @@ function register(){
         <Def>
         <main>
           <h2> REGISTER </h2>
+          <form action="/register" method="POST">
+            <div>
+                <label htmlFor="name">Name</label>
+                <input type="text" id="name" name="name" required></input>
+            </div>
+            <div>
+                <label htmlFor="email">E-mail</label>
+                <input type="email" id="email" name="email" required></input>
+            </div>
+            <div>
+                <label htmlFor="password">Password</label>
+                <input type="password" id="password" name="password" required></input>
+            </div>
+            <button type="submit">Register</button>
+          </form>
           <div>
             {/* BUTTONS */}
               <div >
@@ -25,7 +40,7 @@ function register(){
                   </form> */}
                 {/* BACK TO HOME BUTTON */}
                   <div>
-                    <a href={`/`} className='btn btn-success btn-lg' style={{marginRight: '15px'}}>
+                    <a href={`/`} className='btn btn-success btn-lg' >
                       BACK TO THE HOME SCREEN
                     </a>
                   </div>

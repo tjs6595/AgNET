@@ -18,11 +18,9 @@ function Default(html) {
           <h1>AgNET</h1>
           <nav>
             <a href='/'> <i></i> AgNET</a>
-            <a href='/Livestock'> <i className="fa fa-gamepad" aria-hidden="true"></i> Livestock</a>
-            {/* <a href='/livestock/cattleList'><i className="fa fa-question-circle" aria-hidden="true"></i> Cattle Herds</a> */}
-            {/* <a href='/livestock/cattleHerds/cattle'><i className="fa fa-question-circle" aria-hidden="true"></i> Cattle</a>
-            <a href='/livestock/swineHerds'><i className="fa-solid fa-fire" aria-hidden="true"></i> Swine Herds</a>
-            <a href='/livestock/swineHerds/swine'><i className="fa-solid fa-dragon" aria-hidden="true"></i> Swine</a> */}
+            <a href='/Livestock'> Livestock</a>
+            <a href='/Login'> Login</a>
+            <a href='/Register'> Register</a>
           </nav>
         </header>
         <div id="info">
