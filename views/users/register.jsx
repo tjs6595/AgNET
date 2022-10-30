@@ -7,7 +7,7 @@ function register(){
     return (
         <Def>
         <main>
-          <h2> REGISTER </h2>
+          <h2> SIGN UP </h2>
           <form action="/register" method="POST">
             <div>
                 <label htmlFor="name">Name</label>
@@ -21,7 +21,7 @@ function register(){
                 <label htmlFor="password">Password</label>
                 <input type="password" id="password" name="password" required></input>
             </div>
-            <button type="submit">Register</button>
+            <button type="submit">Sign Up</button>
           </form>
           <div>
             {/* BUTTONS */}

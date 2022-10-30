@@ -44,6 +44,16 @@ app.get('/Livestock', (req, res) => {
     res.render('./livestock')
 })
 
+// ABOUT PAGE
+app.get('/About', (req, res) => {
+    res.render('./about')
+})
+
+// CONTACT PAGE
+app.get('/Contact', (req, res) => {
+    res.render('./contact')
+})
+
 // CATTLE HERD PAGE
 app.get('/Livestock/Cattle/HerdList', (req, res) => {
     res.render('../cattleHerds/herdList')

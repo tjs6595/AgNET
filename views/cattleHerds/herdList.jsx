@@ -21,7 +21,7 @@ function cattleHerds(data){
         <Def>
             <main>
                 <h1>CATTLE HERDS</h1>
-                <div className='row'>
+                <div className='row' style={{display: 'inline-flex'}}>
                     {cattleHerdsFormatted}  
                 </div>
                 <div>
