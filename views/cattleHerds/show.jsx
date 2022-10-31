@@ -3,7 +3,6 @@ const React = require('react')
 const Def = require('../default')
 
 function show (data) {
-  // console.log(data.cattleHerd.cattle.length)
   let cattle = (
     <h3 className="inactive">
       No Cattle Yet!
@@ -14,18 +13,11 @@ function show (data) {
     // console.log(data.cattleHerd.name)
     cattle = data.cattleHerd.cattle.map(c => {
       return (
-        <div>
-          {/* <a href={`./Cattle`}>
-          {c.tag_id}
-        </a> */}
         <div className="border">
           <h4>Tag #: {c.tag_id } </h4>
           <h4>Name: {c.name } </h4>
           <h4>Breed: {c.species } </h4>
         </div>
-
-        </div>
-
       )
     })
   }
@@ -41,19 +33,19 @@ function show (data) {
             <div >
               {/* EDIT BUTTON */}
                 <div>
-                  <a href={`./${data.cattleHerd.id}/edit`} className='btn btn-success btn-lg' style={{marginRight: '15px'}}>
+                  <a href={`./${data.cattleHerd.id}/edit`} className='btn btn-warning' style={{fontWeight: 'bold', fontSize: 15}}>
                     Edit
                   </a>
                 </div>
               {/* DELETE BUTTON */}
                 <form method='POST' action={`./${data.cattleHerd.id}?_method=DELETE`}>
-                  <button type='submit' className='btn btn-danger btn-lg' style={{marginRight: '15px'}}>
+                  <button type='submit' className='btn btn-danger btn-lg'>
                     Delete
                   </button>
                 </form>
               {/* BACK TO HERDS BUTTON */}
                 <div>
-                  <a href={`/Livestock/Cattle/HerdList`} className='btn btn-success btn-lg' style={{marginRight: '15px'}}>
+                  <a href={`/Livestock/Cattle/HerdList`} className='btn btn-success btn-lg'>
                     BACK TO THE HERD LIST
                   </a>
                 </div>

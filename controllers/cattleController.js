@@ -13,7 +13,7 @@ cattle.get('/data/seed', (req, res) => {
 
 
 // export
-module.exports = cattle                   
+// module.exports = cattle                   
 
 
 
@@ -54,91 +54,3 @@ cattle.post('/new', async (req, res) => {
 
 // EXPORT
 module.exports = cattle;
-
-
-
-
-
-
-
-
-
-
-// FIND ONE HERD (SHOW ROUTE)
-// herds.get('/:name', async (req, res) => {
-//     try {
-//         const foundHerd = await Herd.findOne({
-            // where: { name: req.params.name },
-            // include: [
-            //     {
-            //         model: MeetGreet,
-            //         as: "meet_greets",
-            //         include: { 
-            //             model: Event, 
-            //             as: "event",
-            //             where: { name: {[Op.like]: `${req.query.event ? req.query.event : ''}%`}}
-            //     }   
-            //     },
-            //     {
-            //         model: SetTime,
-            //         as: "set_times",
-            //         include: { 
-            //             model: Event, 
-            //             as: "event",
-            //             where: { name: {[Op.like]: `${req.query.event ? req.query.event : ''}%`}}
-            //     }   
-            //     }
-            // ]
-//         })
-//         res.status(200).json(foundHerd)
-//     } 
-//     catch (error) {
-//         res.status(500).json(error)
-//     }
-// })
-
-// CREATE A HERD
-// herds.post('/', async (req, res) => {
-//     try {
-//         const newHerd = await Herd.create(req.body)
-//         res.status(200).json({
-//             message: 'Successfully created a new herd.',
-//             data: newHerd
-//         })
-//     } catch(err) {
-//         res.status(500).json(err)
-//     }
-// })
-
-// UPDATE A HERD
-// herds.put('/:id', async (req, res) => {
-//     try {
-//         const updatedHerds = await Herd.update(req.body,{
-            // where: {
-            // band_id: req.params.id
-            // }
-//         })
-//         res.status(200).json({
-//             message: `Successfully updated ${updatedHerds} herd(s).`
-//         })
-//     } 
-//     catch(err) {
-//         res.status(500).json(err)
-//     }
-// })
-
-// DELETE A BAND
-// herds.delete('/:id', async (req, res) => {
-//     try {
-//         const deletedHerds = await Herd.destroy({
-            // where: {
-            //     band_id: req.params.id
-            // }
-//         })
-//         res.status(200).json({
-//             message: `Successfully deleted ${deletedHerds} Herd(s).`
-//         })
-//     } catch(err) {
-//         res.status(500).json(err)
-//     }
-// })

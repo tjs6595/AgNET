@@ -14,12 +14,14 @@ function newForm (data) {
                 {console.log(data)}
                 <form method="POST" action={`/Livestock/Cattle/HerdList/Cattle/New`}>
                     <div className='form-group'>
-                        <label htmlFor="name"> Cattle </label>
-                        <input className='form-control' id="id" name="tag_id" required />
+                        <label htmlFor="tag_id">Tag Number:</label>
+                        <input className='form-control' id="tag_id" name="tag_id" required />
+                        <label htmlFor="name"> Name </label>
                         <input className='form-control' id="name" name="name" required />
+                        <label htmlFor="species"> Species </label>
                         <input className='form-control' id="species" name="species"/>
                     </div>
-                    <input className='btn btn-primary' type="submit" value="Add Cattle" />
+                    <input className='btn btn-warning btn-lg' type="submit" value="Add" style={{fontWeight: 'bold', fontSize: 15}}/>
                 </form>
             </main>
         </Def>

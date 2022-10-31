@@ -30,7 +30,7 @@ function cattleHerds(data){
                         <div style={{display: 'inline-flex',}}>
                         {/* NEW BUTTON */}
                             <div>
-                                <a href={`./HerdList/new`} className="btn btn-warning"> New Herd </a>  
+                                <a href={`./HerdList/new`} className='btn btn-warning  btn-lg' style={{fontWeight: 'bold', fontSize: 15}}> Add New Herd </a>  
                             </div>
                         </div>
                     </div>
@@ -42,24 +42,3 @@ function cattleHerds(data){
 
 // EXPORTS
 module.exports = cattleHerds
-
-
-
-
-
-
-
-
-
-                {/* <h3><a href={`/cattleHerds/${cattleHerds.cattle_herd_id}`}>
-                    {cattleHerds.name}
-                </a></h3> */}
-                {/* <img className='mockImg' src={pokemon.image} alt={pokemon.name}></img>
-                <img src={pokemon.sprite} alt={pokemon.sprite}></img> */}
-
-                               {/* <div>
-                    <a href={`./HerdList/new`} className="btn btn-warning"> New Herd </a>  
-                    <form method="POST" action={`/cattleHerds/${data.cattleHerd.id}?_method=DELETE`}> 
-                    <button type="submit" className="btn btn-danger"> Delete </button>
-                    </form>  
-                </div>    */}

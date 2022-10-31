@@ -10,8 +10,12 @@ function register(){
           <h2> SIGN UP </h2>
           <form action="/register" method="POST">
             <div>
-                <label htmlFor="name">Name</label>
-                <input type="text" id="name" name="name" required></input>
+                <label htmlFor="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" ></input>
+            </div>
+            <div>
+                <label htmlFor="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" ></input>
             </div>
             <div>
                 <label htmlFor="email">E-mail</label>
@@ -26,18 +30,6 @@ function register(){
           <div>
             {/* BUTTONS */}
               <div >
-                {/* EDIT BUTTON */}
-                  {/* <div>
-                    <a href={`./${data.cattleHerd.id}/edit`} className='btn btn-success btn-lg' style={{marginRight: '15px'}}>
-                      Edit
-                    </a>
-                  </div> */}
-                {/* DELETE BUTTON */}
-                  {/* <form method='POST' action={`./${data.cattleHerd.id}?_method=DELETE`}>
-                    <button type='submit' className='btn btn-danger btn-lg' style={{marginRight: '15px'}}>
-                      Delete
-                    </button>
-                  </form> */}
                 {/* BACK TO HOME BUTTON */}
                   <div>
                     <a href={`/`} className='btn btn-success btn-lg' >

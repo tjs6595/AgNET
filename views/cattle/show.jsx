@@ -39,7 +39,7 @@ function show (data) {
                 <div>
                     <div style={{display: 'inline-flex',}}>
                     {/* EDIT BUTTON */}
-                    <a href={`/mockmon/${data.pokemon.id}/edit`} className='btn btn-success btn-lg' style={{marginRight: '15px'}}>
+                    <a href={`/mockmon/${data.pokemon.id}/edit`} className="btn btn-warning" style={{marginRight: '15px'}}>
                         Edit
                     </a>
 

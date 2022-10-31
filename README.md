@@ -9,17 +9,18 @@ Create a user and log into the app to retrieve your data. Once logged in the use
 ## Technologies Used to Build the Application
 * MONGODB - used for datbase
 * HTML - used for React view pages
-* CSS & maybe SASS - used for styling React view pages
+* CSS & Bootstrap - used for styling React view pages
 * JavaScript - used sparingly throughout when needed
-* React - used for the website pages
+* React - used for the website page routing.
 
 
 ## Outstanding Bugs
---
+- Cannot modify members of specific herds.
+- Login/Logout isn't fully functional.
 
 ## Unfinished Functionality
 Here is a list of future functionality:
+- Further styling changes.
 - Include more species like dairy, sheep, goats, etc.
 - Add crop functionality to allow the user to log information on specific farms to detail crop production.
-- Further styling changes.
 - Adding more user experience items like pictures, more colors, etc.

@@ -48,8 +48,3 @@ function Default(html) {
 }
 
 module.exports = Default
-
-
-        {/* <header>
-          <h1><a>AgNet</a></h1>
-        </header> */}
