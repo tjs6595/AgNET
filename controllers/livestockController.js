@@ -1,9 +1,4 @@
 // DEPENDENCIES
-// const { Op } = require('sequelize')
-// const livestock = require('express').Router()
-// const db = require('../models')
-// const meetgreet = require('../models/meetgreet')
-// const { Band, MeetGreet, Event, SetTime } = db 
 const express = require('express')
 const methodOverride = require('method-override')
 const livestock = express.Router()

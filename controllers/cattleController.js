@@ -10,22 +10,6 @@ cattle.get('/data/seed', (req, res) => {
 })
 
 
-
-
-// export
-// module.exports = cattle                   
-
-
-
-
-
-// DEPENDENCIES
-// const { Op } = require('sequelize')
-// const cattle = require('express').Router()
-// const db = require('../models')
-// const meetgreet = require('../models/meetgreet')
-// const { Band, MeetGreet, Event, SetTime } = db 
-
 // 1.) CATTLE INDEX PAGE
 cattle.get('/', async (req, res) => {
     res.send(`This is the Single Cattle Index Page`)

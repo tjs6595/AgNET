@@ -11,9 +11,6 @@ const methodOverride = require('method-override')
 users.use(methodOverride('_method'))
 
 
-const userLoginArray = []
-
-
 // 1.) LOGIN PAGE
 users.get('/Login', async (req, res) => {
     res.render('users/login.jsx')
