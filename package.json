@@ -24,6 +24,9 @@
   "name": "final-project",
   "description": "=======\r ## Description\r AgNET is an application that is intended to be used as a bookeeping service for farmers and ranchers. The user will be able to log their livestock in their herds. The producer can then use a more detailed view of the herds and their included livestock to make important decisions based on the information stored.",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.14.0"
+  },
   "main": "server.js",
   "repository": {
     "type": "git",
