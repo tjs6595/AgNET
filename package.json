@@ -17,5 +17,24 @@
     "react-router-dom": "^6.4.2",
     "react-scripts": "^5.0.1",
     "sequelize": "^6.25.2"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "final-project",
+  "description": "=======\r ## Description\r AgNET is an application that is intended to be used as a bookeeping service for farmers and ranchers. The user will be able to log their livestock in their herds. The producer can then use a more detailed view of the herds and their included livestock to make important decisions based on the information stored.",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tjs6595/Final-Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tjs6595/Final-Project/issues"
+  },
+  "homepage": "https://github.com/tjs6595/Final-Project#readme"
 }
